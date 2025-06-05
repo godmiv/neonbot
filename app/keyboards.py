@@ -10,3 +10,4 @@ menu1 = ReplyKeyboardMarkup(keyboard=[
     [KeyboardButton(text="Кнопка 3"), KeyboardButton(text="Кнопка 4")],
     [KeyboardButton(text="Кнопка 5"), KeyboardButton(text="Кнопка 6")],
 ])
+

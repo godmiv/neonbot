@@ -6,10 +6,6 @@ import app.keyboards as kb
 
 router = Router()
 
-# Хэндлер на команду /start
-#@router.message(Command("start"))
-#async def cmd_start(message: Message):
-#    await message.answer("Привет!")
 
 @router.message(CommandStart())
 async def cmd_start(message: Message):
@@ -18,4 +14,10 @@ async def cmd_start(message: Message):
 
 @router.message(Command("info"))
 async def cmd_info(message: Message):
-    await message.answer(f"ID этого чата: {message.chat.id}")
+    await message.answer(f"ID этого чата: {message.chat.id}\nТип чата: {message.chat.type}")
+
+"""
+@router.message(F.text)
+async def cmd_info(message: Message):
+    await message.reply(f"Эхо: {message.text}")
+"""
