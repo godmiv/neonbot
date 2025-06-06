@@ -1,6 +1,5 @@
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
-
 class TimePicker:
     def __init__(self):
         self.hour = 0

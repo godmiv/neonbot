@@ -8,7 +8,6 @@ from app.timepicker import TimePicker
 # Создаем роутер
 time_router = Router()
 
-
 class TimeStates(StatesGroup):
     selecting_time = State()
 

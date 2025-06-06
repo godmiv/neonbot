@@ -4,7 +4,7 @@ import os
 from aiogram import Bot, Dispatcher, types
 #Диспетчер из файла handlers.py
 from app.handlers import router
-from app.calendar import calendar_router
+from app.calendar_router import calendar_router
 from app.time_router import time_router
 from app.command_list import commands_list
 # Объект бота
@@ -14,8 +14,9 @@ dp = Dispatcher()
 
 # Запуск процесса поллинга новых апдейтов
 async def main():
+    # Подключаем основной роутер
     dp.include_router(router)
-    # Подключаем роутер календаря
+    # Подключаем дополнительные роутеры
     dp.include_router(calendar_router)
     dp.include_router(time_router)
     await bot.set_my_commands(commands=commands_list, scope=types.BotCommandScopeAllPrivateChats()) # Показывает меню, даееые берет из файла commands_list
